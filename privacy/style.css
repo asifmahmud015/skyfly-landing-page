@@ -1,0 +1,44 @@
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI',sans-serif; }
+body { background:#f5f7fa; color:#333; line-height:1.7; }
+nav { display:flex; justify-content:space-between; align-items:center;
+  padding:20px 8%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+nav h1 { color:#0077ff; }
+.container { max-width:900px; margin:50px auto; padding:40px;
+  background:#fff; border-radius:15px; box-shadow:0 5px 25px rgba(0,0,0,0.08); }
+h1 { color:#00264d; margin-bottom:20px; font-size:36px; }
+h2 { color:#0077ff; margin:30px 0 12px; font-size:22px; }
+p, li { margin-bottom:12px; color:#444; }
+ul { padding-left:25px; }
+.updated { color:#888; font-size:14px; margin-bottom:25px; }
+footer { background:#00264d; color:#fff; text-align:center; padding:30px; margin-top:50px; }
+footer a { color:#66b3ff; text-decoration:none; margin:0 12px; }
+
+/* ---------- Animated Back Button ---------- */
+.back-btn {
+  padding: 0; margin: 0; border: none; background: none;
+  cursor: pointer; text-decoration: none;
+  --primary-color: #111;
+  --hovered-color: #0077ff;
+  position: relative; display: flex;
+  font-weight: 600; font-size: 20px; gap: 0.5rem; align-items: center;
+}
+.back-btn p {
+  margin: 0; position: relative; font-size: 20px;
+  color: var(--primary-color); font-weight: 600;
+}
+.back-btn::after {
+  position: absolute; content: ""; width: 0; left: 0; bottom: -7px;
+  background: var(--hovered-color); height: 2px; transition: 0.3s ease-out;
+}
+.back-btn p::before {
+  position: absolute; content: "Back to Home";
+  width: 0%; inset: 0; color: var(--hovered-color);
+  overflow: hidden; white-space: nowrap; transition: 0.3s ease-out;
+}
+.back-btn:hover::after { width: 100%; }
+.back-btn:hover p::before { width: 100%; }
+.back-btn:hover svg { transform: translateX(-4px); color: var(--hovered-color); }
+.back-btn svg {
+  color: var(--primary-color); transition: 0.2s;
+  position: relative; width: 15px; transition-delay: 0.2s;
+}
